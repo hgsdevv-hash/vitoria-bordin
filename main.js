@@ -28,25 +28,36 @@
   let rt;
   addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(fitAll, 120); });
 
-  /* ---------- abertura ---------- */
+  /* ---------- abertura: os cílios desenhados fio a fio ---------- */
   const hero = $('.hero');
-  const ready = () => hero.classList.add('is-ready');
-  if (document.fonts && document.fonts.ready) {
-    Promise.race([document.fonts.ready, new Promise(r => setTimeout(r, 900))]).then(() => setTimeout(ready, 30));
-  } else ready();
-  setTimeout(ready, 1500);
-
-  const frames = $$('.hero__frame');
-  let fi = 0, timer = null;
-  function next() {
-    frames[fi].classList.remove('is-on');
-    fi = (fi + 1) % frames.length;
-    frames[fi].classList.add('is-on');
+  const hl = $('#hero-lashes');
+  if (hl) {
+    const NSH = 'http://www.w3.org/2000/svg';
+    const L = [[70, 400], [330, 170], [870, 170], [1130, 400]];
+    const pt = (t) => { const u = 1 - t; return [0, 1].map(k => u*u*u*L[0][k] + 3*u*u*t*L[1][k] + 3*u*t*t*L[2][k] + t*t*t*L[3][k]); };
+    const tg = (t) => { const u = 1 - t; return [0, 1].map(k => 3*u*u*(L[1][k]-L[0][k]) + 6*u*t*(L[2][k]-L[1][k]) + 3*t*t*(L[3][k]-L[2][k])); };
+    const n = 64;
+    for (let i = 0; i < n; i++) {
+      const t = 0.03 + (i / (n - 1)) * 0.94;
+      const p = pt(t), d = tg(t), m = Math.hypot(d[0], d[1]);
+      let v = [d[1] / m, -d[0] / m];
+      const out = Math.max(0, (t - 0.4) / 0.6);
+      const a = 0.12 + 0.5 * out * out - 0.25 * Math.max(0, 0.25 - t) * 4;
+      v = [v[0] * Math.cos(a) - v[1] * Math.sin(a), v[0] * Math.sin(a) + v[1] * Math.cos(a)];
+      const len = 80 + 170 * Math.pow(t, 1.6) + (i % 3 === 1 ? 14 : 0);
+      const pe = [v[1], -v[0]];
+      const c = [p[0] + v[0] * len * 0.55 + pe[0] * len * 0.18, p[1] + v[1] * len * 0.55 + pe[1] * len * 0.18];
+      const e = [p[0] + v[0] * len, p[1] + v[1] * len];
+      const path = document.createElementNS(NSH, 'path');
+      path.setAttribute('class', 'lash-s');
+      path.setAttribute('pathLength', '1');
+      path.setAttribute('d', `M${p[0].toFixed(1)} ${p[1].toFixed(1)} Q${c[0].toFixed(1)} ${c[1].toFixed(1)} ${e[0].toFixed(1)} ${e[1].toFixed(1)}`);
+      path.style.setProperty('--d', (0.32 + i * 0.011).toFixed(3) + 's');
+      hl.appendChild(path);
+    }
   }
-  function startHero() { if (!reduce && !timer) timer = setInterval(next, 5600); }
-  function stopHero() { clearInterval(timer); timer = null; }
-  startHero();
-  document.addEventListener('visibilitychange', () => document.hidden ? stopHero() : startHero());
+  const go = () => hero.classList.add('is-drawn', 'is-ready');
+  setTimeout(go, 80);
 
   /* ---------- menu ---------- */
   const mBtn = $('.nav__menu'), menu = $('#menu');
@@ -96,7 +107,7 @@
 
   /* ---------- botão flutuante ---------- */
   const wa = $('.wa');
-  const foot = $('footer');
+  const foot = $('#contato') || $('footer');
   const showWa = () => wa.classList.toggle('is-on', scrollY > innerHeight * 0.8 && (!foot || foot.getBoundingClientRect().top > innerHeight * 0.75));
   addEventListener('scroll', showWa, { passive: true }); showWa();
 

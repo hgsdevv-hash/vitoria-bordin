@@ -14,9 +14,7 @@
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,800&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="media/hero-1.webp" media="(min-width: 700px)">
-<link rel="preload" as="image" href="media/olho-1.webp?v=2" media="(max-width: 699px)">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=10">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -49,26 +47,10 @@
 
   <!-- ABERTURA -->
   <section class="hero" aria-label="Abertura">
-    <div class="hero__media" aria-hidden="true">
-      <picture class="hero__frame is-on">
-        <img src="media/hero-1.webp" alt="" width="1920" height="1080" fetchpriority="high">
-      </picture>
-      <picture class="hero__frame">
-        <img src="media/hero-2.webp" alt="" width="1912" height="1075" loading="lazy">
-      </picture>
-      <picture class="hero__frame">
-        <img src="media/hero-3.webp" alt="" width="1920" height="1080" loading="lazy">
-      </picture>
-      <picture class="hero__frame">
-        <img src="media/hero-4.webp" alt="" width="1920" height="1080" loading="lazy">
-      </picture>
-    </div>
-    <div class="hero__strips" aria-hidden="true">
-      <img src="media/olho-1.webp?v=2" alt="" width="800" height="333">
-      <img src="media/olho-2.webp" alt="" width="1056" height="440">
-      <img src="media/olho-3.webp" alt="" width="960" height="400">
-    </div>
-    <div class="hero__scrim" aria-hidden="true"></div>
+    <svg class="hero__lash" viewBox="0 -60 1200 490" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path class="hero__lid" pathLength="1" d="M70 400 C 330 170, 870 170, 1130 400"/>
+      <g id="hero-lashes"></g>
+    </svg>
     <div class="hero__foot">
       <p class="hero__lead">Vitória Bordin, lash designer. Extensão de cílios fio a fio e sobrancelhas em Nova&nbsp;Odessa e Sumaré.</p>
       <a class="btn btn--accent hero__cta" href="https://wa.me/5519995124885?text=Oi%2C%20Vit%C3%B3ria!%20Vi%20seu%20site%20e%20quero%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">Agendar no WhatsApp</a>
@@ -80,21 +62,17 @@
   <section class="show" id="resultados" aria-labelledby="show-t">
     <h2 class="show__title rv" id="show-t">Olhares que ela fez</h2>
     <div class="band">
-      <figure class="band__panel rv-img" style="--g:5">
+      <figure class="band__panel band__panel--big rv-img">
         <img src="media/fox-m.webp" alt="Cliente com extensão de cílios efeito fox eyes, olhar alongado e puxado para cima" width="1056" height="587" loading="lazy">
         <figcaption class="band__title">Fox eyes, <br>o olhar puxado</figcaption>
       </figure>
-      <figure class="band__panel rv-img" style="--g:2">
-        <img src="media/brasileiro-m.webp" alt="Cliente com volume brasileiro, cílios preenchidos e leves" width="1048" height="582" loading="lazy">
+      <figure class="band__panel rv-img">
+        <img src="media/brasileiro-m.webp?v=2" alt="Cliente sorrindo com volume brasileiro, cílios preenchidos e leves" width="960" height="533" loading="lazy">
         <figcaption class="band__tag">Volume brasileiro</figcaption>
       </figure>
-      <figure class="band__panel rv-img" style="--g:3">
-        <img src="media/egipcio-m.webp" alt="Close de olhos com volume egípcio, fio 5W" width="793" height="441" loading="lazy">
-        <figcaption class="band__tag">Volume egípcio</figcaption>
-      </figure>
-      <figure class="band__panel rv-img" style="--g:2">
-        <img src="media/marrom-m.webp" alt="Cliente com volume brasileiro feito com fio marrom" width="827" height="459" loading="lazy">
-        <figcaption class="band__tag">Brasileiro marrom</figcaption>
+      <figure class="band__panel rv-img">
+        <img src="media/perto.webp" alt="Close de um olho com extensão de cílios volumosa, fio a fio" width="652" height="362" loading="lazy">
+        <figcaption class="band__tag">De perto, fio a fio</figcaption>
       </figure>
     </div>
     <p class="show__cap rv">Fotos de clientes reais, tiradas logo depois do atendimento.</p>
@@ -261,6 +239,6 @@
   <span>Agendar</span>
 </a>
 
-<script src="main.js?v=3" defer></script>
+<script src="main.js?v=6" defer></script>
 </body>
 </html>
