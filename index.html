@@ -15,8 +15,8 @@
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="media/hero-1.webp" media="(min-width: 700px)">
-<link rel="preload" as="image" href="media/hero-1-m.webp" media="(max-width: 699px)">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="preload" as="image" href="media/olho-1.webp?v=2" media="(max-width: 699px)">
+<link rel="stylesheet" href="style.css?v=4">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -51,21 +51,22 @@
   <section class="hero" aria-label="Abertura">
     <div class="hero__media" aria-hidden="true">
       <picture class="hero__frame is-on">
-        <source media="(max-width: 699px)" srcset="media/hero-1-m.webp">
         <img src="media/hero-1.webp" alt="" width="1920" height="1080" fetchpriority="high">
       </picture>
       <picture class="hero__frame">
-        <source media="(max-width: 699px)" srcset="media/hero-2-m.webp">
         <img src="media/hero-2.webp" alt="" width="1912" height="1075" loading="lazy">
       </picture>
       <picture class="hero__frame">
-        <source media="(max-width: 699px)" srcset="media/hero-3-m.webp">
         <img src="media/hero-3.webp" alt="" width="1920" height="1080" loading="lazy">
       </picture>
       <picture class="hero__frame">
-        <source media="(max-width: 699px)" srcset="media/hero-4-m.webp">
         <img src="media/hero-4.webp" alt="" width="1920" height="1080" loading="lazy">
       </picture>
+    </div>
+    <div class="hero__strips" aria-hidden="true">
+      <img src="media/olho-1.webp?v=2" alt="" width="800" height="333">
+      <img src="media/olho-2.webp" alt="" width="1056" height="440">
+      <img src="media/olho-3.webp" alt="" width="960" height="400">
     </div>
     <div class="hero__scrim" aria-hidden="true"></div>
     <div class="hero__foot">
@@ -80,23 +81,23 @@
     <h2 class="show__title rv" id="show-t">Olhares que ela fez</h2>
     <div class="band">
       <figure class="band__panel rv-img" style="--g:5">
-        <img src="media/fox.webp" alt="Cliente com extensão de cílios efeito fox eyes, olhar alongado e puxado para cima" width="669" height="1079" loading="lazy">
-        <figcaption class="band__title">Fox eyes,<br>o olhar puxado</figcaption>
+        <img src="media/fox-m.webp" alt="Cliente com extensão de cílios efeito fox eyes, olhar alongado e puxado para cima" width="1056" height="587" loading="lazy">
+        <figcaption class="band__title">Fox eyes, <br>o olhar puxado</figcaption>
       </figure>
       <figure class="band__panel rv-img" style="--g:2">
-        <img src="media/brasileiro.webp" alt="Cliente com volume brasileiro, cílios preenchidos e leves" width="667" height="1076" loading="lazy">
+        <img src="media/brasileiro-m.webp" alt="Cliente com volume brasileiro, cílios preenchidos e leves" width="1048" height="582" loading="lazy">
         <figcaption class="band__tag">Volume brasileiro</figcaption>
       </figure>
       <figure class="band__panel rv-img" style="--g:3">
-        <img src="media/egipcio.webp" alt="Close de olhos com volume egípcio, fio 5W" width="669" height="1079" loading="lazy">
+        <img src="media/egipcio-m.webp" alt="Close de olhos com volume egípcio, fio 5W" width="793" height="441" loading="lazy">
         <figcaption class="band__tag">Volume egípcio</figcaption>
       </figure>
       <figure class="band__panel rv-img" style="--g:2">
-        <img src="media/marrom.webp" alt="Cliente com volume brasileiro feito com fio marrom" width="669" height="1079" loading="lazy">
+        <img src="media/marrom-m.webp" alt="Cliente com volume brasileiro feito com fio marrom" width="827" height="459" loading="lazy">
         <figcaption class="band__tag">Brasileiro marrom</figcaption>
       </figure>
     </div>
-    <p class="show__cap rv">Fotos de clientes reais, tiradas logo depois do atendimento. Passe o mouse para abrir cada olhar.</p>
+    <p class="show__cap rv">Fotos de clientes reais, tiradas logo depois do atendimento.</p>
   </section>
 
   <!-- MAPA (parte viva) -->
@@ -148,10 +149,10 @@
 
   <!-- TÉCNICAS -->
   <section class="tec" id="tecnicas" aria-labelledby="tec-t">
-    <h2 class="tec__title rv" id="tec-t">Bordado fio a fio,<br>uma extensão por cílio</h2>
+    <h2 class="tec__title rv" id="tec-t">Bordado fio a fio, <br>uma extensão por cílio</h2>
     <div class="tec__grid">
       <figure class="tec__photo rv-img">
-        <img src="media/vitoria-4x5.webp" alt="Vitória Bordin explicando as técnicas de extensão de cílios" width="720" height="900" loading="lazy">
+        <img src="media/vitoria-4x5.webp?v=2" alt="Vitória Bordin explicando as técnicas de extensão de cílios" width="576" height="720" loading="lazy">
       </figure>
       <p class="tec__word rv">Técnicas</p>
       <ul class="tec__table">
@@ -260,6 +261,6 @@
   <span>Agendar</span>
 </a>
 
-<script src="main.js?v=1" defer></script>
+<script src="main.js?v=2" defer></script>
 </body>
 </html>

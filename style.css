@@ -103,20 +103,20 @@ ul { padding: 0; list-style: none; }
 }
 .fit { display: inline-block; white-space: nowrap; vertical-align: top; letter-spacing: -0.045em; }
 
+.hero__strips { display: none; }
+.band__panel picture { display: block; width: 100%; height: 100%; }
+
 /* resultados */
 .show { padding: var(--sec) 0 0; }
 .show__title { font-size: var(--step-head); font-weight: 800; letter-spacing: -0.035em; line-height: .95; padding: 0 var(--m) 64px calc(var(--m) + (100vw - 2 * var(--m)) * 2 / 12); }
-.band { display: flex; height: 76svh; min-height: 460px; }
-.band__panel { position: relative; flex: var(--g) 1 0; overflow: hidden; transition: flex-grow .5s var(--ease); background: var(--surface); }
+.band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 4px; }
+.band__panel { position: relative; aspect-ratio: 9 / 5; overflow: hidden; background: var(--surface); }
 .band__panel img { width: 100%; height: 100%; object-fit: cover; }
 .band__title, .band__tag { position: absolute; left: 24px; color: var(--ink); }
-.band__title { top: 22px; font-size: var(--step-lead); font-weight: 800; letter-spacing: -0.025em; line-height: 1.02; }
+.band__title { bottom: 20px; font-size: var(--step-lead); font-weight: 800; letter-spacing: -0.025em; line-height: 1.02; }
 .band__tag { bottom: 20px; font-size: var(--step-body); font-weight: 500; }
-.band__panel::before { content: ""; position: absolute; inset: 0; pointer-events: none; /* taste-skill-ignore: scrim neutro sobre foto */ background: linear-gradient(to bottom, rgba(13, 6, 11, .45), rgba(13, 6, 11, 0) 30%, rgba(13, 6, 11, 0) 72%, rgba(13, 6, 11, .5)); z-index: 1; }
+.band__panel::before { content: ""; position: absolute; inset: 0; pointer-events: none; /* taste-skill-ignore: scrim neutro sobre foto */ background: linear-gradient(to top, rgba(13, 6, 11, .6), rgba(13, 6, 11, 0) 40%); z-index: 1; }
 .band__panel figcaption { z-index: 2; }
-@media (hover: hover) and (min-width: 900px) {
-  .band__panel:hover { flex-grow: 6; }
-}
 .show__cap { padding: 18px var(--m) 0; color: var(--muted); font-size: var(--step-body); }
 
 /* mapa (parte viva) */
@@ -316,19 +316,21 @@ ul { padding: 0; list-style: none; }
   .hero__foot { grid-template-columns: minmax(0, 1fr); }
   .hero__lead { font-size: 1.125rem; max-width: 24ch; }
   .hero__name { margin-bottom: 18px; }
-  .hero__media { bottom: auto; height: min(140vw, 78svh); }
-  .hero__frame img { object-position: 50% 50%; }
-  .hero__scrim { height: 62%; background: linear-gradient(to top, #0d060b 52%, rgba(13, 6, 11, 0)); } /* taste-skill-ignore: scrim neutro sobre foto */
+  .hero { height: auto; min-height: 100svh; display: flex; flex-direction: column; justify-content: space-between; }
+  .hero::before { display: none; }
+  .hero__media, .hero__scrim { display: none; }
+  .hero__strips { display: grid; gap: 4px; padding-top: 72px; }
+  .hero__strips img { display: block; width: 100%; height: auto; aspect-ratio: 12 / 5; object-fit: cover; }
+  .hero__foot { position: relative; inset: auto; padding: 28px var(--m) 0; }
 
   .show__title { padding-left: var(--m); padding-bottom: 32px; font-size: 1.75rem; }
-  .band { flex-wrap: wrap; height: 88svh; min-height: 560px; }
-  .band__panel { height: 50%; flex: 0 0 auto; }
-  .band__panel:nth-child(1) { width: 64%; }
-  .band__panel:nth-child(2) { width: 36%; }
-  .band__panel:nth-child(3) { width: 36%; }
-  .band__panel:nth-child(4) { width: 64%; }
-  .band__title { left: 16px; top: 16px; font-size: 1.375rem; }
-  .band__tag { left: 16px; bottom: 14px; font-size: var(--step-small); }
+  .band { grid-template-columns: minmax(0, 1fr); }
+  .band__panel { height: auto; aspect-ratio: 9 / 5; }
+  .band__panel picture { display: block; height: 100%; }
+  .band__panel::before { background: linear-gradient(to top, rgba(13, 6, 11, .6), rgba(13, 6, 11, 0) 42%); } /* taste-skill-ignore: scrim neutro sobre foto */
+  .band__title, .band__tag { top: auto; left: 16px; bottom: 12px; font-size: 1.125rem; font-weight: 700; letter-spacing: -0.015em; }
+  .band__title br { display: none; }
+  .show__hover { display: none; }
 
   .mapa { padding: 80px var(--m); }
   .mapa__title { font-size: 2.25rem; }
