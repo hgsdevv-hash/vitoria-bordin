@@ -61,6 +61,9 @@ ul { padding: 0; list-style: none; }
 .btn--accent { background: var(--accent); color: var(--accent-ink); }
 .btn--accent:hover { background: var(--paper); }
 .btn:active { transform: scale(.97); }
+.btn--line { color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+.btn--line:hover { background: var(--ink); color: var(--bg); }
+.btn .ico { width: 22px; height: 22px; flex: none; }
 
 /* navegação */
 .nav {
@@ -97,9 +100,9 @@ ul { padding: 0; list-style: none; }
   display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: end; row-gap: 14px;
 }
 .hero__lead { max-width: 30ch; font-size: var(--step-body); font-weight: 500; line-height: 1.4; }
-.hero__cta { justify-self: end; }
+.hero__cta { grid-row: 1; grid-column: 2; justify-self: end; display: flex; flex-wrap: wrap; gap: 10px; }
 .hero__name {
-  grid-column: 1 / -1; min-width: 0; font-weight: 800; text-transform: uppercase;
+  grid-row: 2; grid-column: 1 / -1; min-width: 0; font-weight: 800; text-transform: uppercase;
   letter-spacing: -0.045em; line-height: .78; margin-bottom: 22px;
   font-size: 25vw; white-space: nowrap;
 }
@@ -158,10 +161,8 @@ ul { padding: 0; list-style: none; }
 .tec__title br { display: none; }
 @media (min-width: 900px) { .tec__title { text-indent: 3vw; } .tec__title br { display: inline; } }
 .tec__grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: var(--gap); margin-top: 96px; align-items: end; }
-.tec__photo { grid-column: 1 / 5; grid-row: 1 / 3; align-self: end; }
-.tec__photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-.tec__word { grid-column: 5 / 6; grid-row: 1; align-self: start; color: var(--muted); font-size: var(--step-small); padding-top: 4px; }
-.tec__table { grid-column: 6 / 13; grid-row: 1 / 3; }
+.tec__word { grid-column: 1 / 4; grid-row: 1; align-self: start; color: var(--muted); font-size: var(--step-small); padding-top: 4px; }
+.tec__table { grid-column: 4 / 13; grid-row: 1 / 3; }
 .row {
   display: grid; grid-template-columns: 17% 23% 1fr auto; column-gap: 14px; align-items: baseline;
   padding: 13px 0; font-size: var(--step-body);
@@ -227,7 +228,8 @@ ul { padding: 0; list-style: none; }
 }
 .contato__num:hover { color: var(--accent); }
 .contato__foot { grid-row: 4; display: flex; justify-content: space-between; gap: 20px; font-size: var(--step-small); }
-.contato__links { display: flex; gap: 22px; align-items: end; }
+.contato__links { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; }
+.contato__links .btn { font-size: 1.125rem; padding: 20px 28px; }
 
 /* rodapé */
 .rodape {
@@ -279,7 +281,9 @@ ul { padding: 0; list-style: none; }
   .nav { gap: 18px; }
   .nav__mark { margin-right: 0; }
   .nav__menu { margin-right: auto; }
-  .hero__cta { display: none; }
+  .hero__cta { justify-self: stretch; grid-column: 1 / -1; grid-row: 3; margin-bottom: 20px; }
+  .hero__cta .btn { flex: 1 1 0; }
+  .hero__name { grid-row: 2; margin-bottom: 4px; }
   .hero__lead { font-size: 1.125rem; }
 
   .mapa__text { grid-column: 1 / -1; }
@@ -288,8 +292,7 @@ ul { padding: 0; list-style: none; }
   .tec__grid { margin-top: 56px; }
   .tec__table { grid-column: 1 / -1; grid-row: 1; }
   .tec__word { display: none; }
-  .tec__photo { grid-column: 6 / 13; grid-row: 2; margin-top: 56px; }
-
+  
   .sobre { padding: 96px var(--m); }
   .sobre__text { grid-column: 1 / -1; grid-row: 1; }
   .sobre__facts { grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(3, 1fr); margin-top: 40px; }
@@ -316,7 +319,7 @@ ul { padding: 0; list-style: none; }
   .nav__cta { padding: 10px 14px; }
   .hero__foot { grid-template-columns: minmax(0, 1fr); }
   .hero__lead { font-size: 1.125rem; max-width: 24ch; }
-  .hero__name { margin-bottom: 18px; }
+  .hero__name { margin-bottom: 4px; }
   .hero__lash { left: -16vw; width: 132vw; top: 96px; height: 46svh; }
   .lash-s { stroke-width: 1.6px; }
 
@@ -340,8 +343,7 @@ ul { padding: 0; list-style: none; }
   .row__go { grid-column: 2; grid-row: 2; }
   .row__desc { grid-column: 1 / -1; font-size: 1rem; }
   .row--group { margin-top: 24px; }
-  .tec__photo { grid-column: 5 / 13; }
-
+  
   .sobre__p { font-size: 1.375rem; line-height: 1.25; }
   .sobre__face { width: 4.6em; height: 4.6em; }
   .sobre__facts { gap: 12px; }
@@ -352,7 +354,8 @@ ul { padding: 0; list-style: none; }
   .contato__foot { grid-row: 3; }
   .contato__num { font-size: 13vw; margin-bottom: 7vh; }
   .contato__foot { flex-direction: column; gap: 12px; }
-  .contato__links { gap: 18px; }
+  .contato__links { gap: 10px; width: 100%; }
+  .contato__links .btn { flex: 1 1 0; padding: 18px 12px; }
 
   .rodape { min-height: 64svh; }
   .wa span { display: none; }
