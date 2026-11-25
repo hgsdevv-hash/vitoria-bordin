@@ -96,7 +96,8 @@
 
   /* ---------- botão flutuante ---------- */
   const wa = $('.wa');
-  const showWa = () => wa.classList.toggle('is-on', scrollY > innerHeight * 0.8);
+  const foot = $('footer');
+  const showWa = () => wa.classList.toggle('is-on', scrollY > innerHeight * 0.8 && (!foot || foot.getBoundingClientRect().top > innerHeight * 0.75));
   addEventListener('scroll', showWa, { passive: true }); showWa();
 
   /* ---------- mapa de cílios ---------- */
