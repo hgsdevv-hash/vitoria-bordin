@@ -33,5 +33,10 @@ O site foi desenhado com a skill design-taste-frontend. A direção sorteada foi
 - As fotos das clientes saíram dos reels públicos dela; precisa da autorização de uso no site.
 - Confirmar a história do "Sobre" (CLT, loja de roupa fitness, cílios desde 2019), que veio do reel "meu porquê".
 
+**Depoimentos**
+- Ela não tem perfil no Google Maps, então não há avaliações do Google.
+- A seção "O que as clientes dizem" já está pronta no index.html, mas escondida (`hidden`). Quando chegarem os prints, trocar os textos de exemplo pelos reais (primeiro nome e técnica) e tirar o `hidden`. Pode ter de 2 a 6 itens.
+- Sugerir que ela crie o Perfil da Empresa no Google e peça avaliações.
+
 **Preços**
 - Não há preços no site; se ela quiser, entram na tabela de técnicas.

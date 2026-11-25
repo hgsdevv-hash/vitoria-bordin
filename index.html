@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -175,6 +175,19 @@
       <p class="como__p rv"><b>No fim, o espelho.</b> Você levanta, abre os olhos e vê o resultado. Ela explica os cuidados e já combina a manutenção para o olhar continuar cheio.</p>
       <figure class="como__img rv-img"><img src="media/resultado.webp" alt="Close dos olhos de uma cliente com extensão de cílios volumosa" width="1574" height="984" loading="lazy"></figure>
     </div>
+  </section>
+
+  <!-- DEPOIMENTOS: escondida até chegarem os prints das clientes.
+       Para mostrar: tirar o atributo "hidden" da section e trocar os textos de exemplo pelos reais
+       (só o primeiro nome e a técnica). Pode ter de 2 a 6 itens. -->
+  <section class="dep" id="depoimentos" aria-labelledby="dep-t" hidden>
+    <h2 class="dep__title rv" id="dep-t">O que as clientes dizem</h2>
+    <ul class="dep__list">
+      <li class="dep__item dep__item--big rv"><blockquote><p>Texto da cliente, copiado do print. Pode ser mais longo que os outros.</p></blockquote><p class="dep__who"><strong>Nome</strong> · Volume brasileiro</p></li>
+      <li class="dep__item rv"><blockquote><p>Texto da cliente, copiado do print.</p></blockquote><p class="dep__who"><strong>Nome</strong> · Fox eyes</p></li>
+      <li class="dep__item rv"><blockquote><p>Texto da cliente, copiado do print.</p></blockquote><p class="dep__who"><strong>Nome</strong> · Mapeamento boneca</p></li>
+    </ul>
+    <p class="dep__src rv">Mensagens enviadas pelas clientes no WhatsApp e no Instagram.</p>
   </section>
 
   <!-- DÚVIDAS -->
